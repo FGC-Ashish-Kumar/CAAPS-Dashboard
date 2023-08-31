@@ -1,0 +1,50 @@
+.header {
+  background-color: #6a6c76;
+  color: white;
+}
+
+.not-started-bg {
+  background-color: #6a6c76;
+  color: white;
+}
+
+.square-button {
+  border-radius: 0;
+  background-color: #097969;
+  color: white;
+}
+
+.start-button {
+  background-color: #097969;
+  color: white;
+  border-top-left-radius: 0;
+}
+
+.stop-button {
+  background-color: #097969;
+  color: white;
+}
+
+.restart-button {
+  background-color: #097969;
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.start-bg {
+  background-color: green;
+}
+
+.stop-bg {
+  background-color: red;
+}
+
+.restart-bg {
+  background-color: orange;
+}
+
+.start-bg,
+.stop-bg,
+.restart-bg {
+  transition: background-color 0.8s ease;
+}/*# sourceMappingURL=button-list.component.css.map */

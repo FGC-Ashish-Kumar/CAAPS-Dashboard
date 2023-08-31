@@ -1,0 +1,10 @@
+<div class="card text-center">
+    <div class="card-header header" [ngClass]="{'start-bg': clickedButton === 'start', 'stop-bg': clickedButton === 'stop', 'restart-bg': clickedButton === 'restart', 'not-started-bg' : clickedButton === 'not-started' }">
+      {{ buttonContent }}
+    </div>
+    <div class="btn-group custom-button-group">
+        <a href="#" class="btn start-button" (click)="startClicked()"><mat-icon>play_arrow</mat-icon></a>
+        <a href="#" class="btn stop-button" (click)="stopClicked()"><mat-icon>stop</mat-icon></a>
+    </div>    
+      
+</div>

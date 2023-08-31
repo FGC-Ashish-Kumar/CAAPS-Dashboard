@@ -1,0 +1,36 @@
+.header {
+    background-color: #6a6c76;
+    color: white;
+    height: 10vh !important;
+    padding: 21px !important;
+}
+
+.not-started-bg {
+    background-color: #6a6c76;
+    color: white;
+}
+
+.start-button {
+    background-color: white; 
+    color: green; 
+    border-top-left-radius: 0; 
+}
+
+.stop-button {
+    background-color: white;
+    color: red; 
+    border-top-right-radius: 0;
+}
+
+.start-bg {
+    background-color: green; 
+}
+
+.stop-bg {
+background-color: red; 
+}
+
+.start-bg,
+.stop-bg {
+    transition: background-color 0.8s ease; 
+}

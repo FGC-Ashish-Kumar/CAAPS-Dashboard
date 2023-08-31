@@ -1,0 +1,14 @@
+<div class="container center-container">
+    <div class="row mt-5 box-container">
+        <div [ngClass]="{'box-container': true, 'small': buttonContents.length <= 3, 'medium': buttonContents.length > 3 && buttonContents.length <= 6, 'large': buttonContents.length > 6}">
+            <ng-container *ngFor="let content of buttonContents; let i = index">
+                <div class="col" [ngStyle]="{'flex-basis': calculateCardWidth()}">
+                    <div class="card m-3 with-shadow rounded">
+                        <app-button-list [buttonContent]="content"></app-button-list>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
