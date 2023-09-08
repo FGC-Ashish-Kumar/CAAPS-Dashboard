@@ -1,4 +1,4 @@
-<div class="card text-center">
+<!-- <div class="card text-center">
     <div class="card-header header" [ngClass]="{'start-bg': clickedButton === 'start', 'stop-bg': clickedButton === 'stop', 'restart-bg': clickedButton === 'restart', 'not-started-bg' : clickedButton === 'not-started' }">
       {{ buttonContent }}
     </div>
@@ -7,4 +7,24 @@
         <a href="#" class="btn stop-button" (click)="stopClicked()"><mat-icon>stop</mat-icon></a>
     </div>    
       
+</div> -->
+
+<div class="card text-center">
+  <div
+    class="card-header header"
+    [ngClass]="{
+      'start-bg': clickedButton === 'start' && cluster.status === 'ACTIVE',
+      'stop-bg': clickedButton === 'stop' && cluster.status === 'STOPPED',
+      'restart-bg': clickedButton === 'restart' && cluster.status === 'RESTARTED',
+      'not-started-bg': clickedButton === 'not-started' && cluster.status === 'NOT_STARTED',
+      'green-bg': cluster.tasks,
+      'red-bg': cluster.status !== 'ACTIVE'
+    }"
+  >
+    {{ buttonContent }}
+  </div>
+  <div class="btn-group custom-button-group">
+    <a href="#" class="btn start-button" (click)="startClicked()"><mat-icon>play_arrow</mat-icon></a>
+    <a href="#" class="btn stop-button" (click)="stopClicked()"><mat-icon>stop</mat-icon></a>
+  </div>
 </div>

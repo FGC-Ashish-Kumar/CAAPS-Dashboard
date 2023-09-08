@@ -7,9 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonListComponent {
   @Input() buttonContent: string;
+  @Input() cluster!: { name: string; status: string, tasks: number };
   state: boolean = false;
   prevState: boolean | null = null;
   clickedButton: string = 'not-started';
+
+  ngOnInit() {
+    // console.log("cluster in button ", this.cluster);
+  }
 
   startClicked() {
     this.prevState = this.state;
@@ -25,5 +30,6 @@ export class ButtonListComponent {
   
   constructor() {
     this.buttonContent = ''; 
+    // console.log("cluster in button ", this.cluster)
   }
 }

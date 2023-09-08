@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dinotestmodule-dev-155240-authRole",
+      "UnauthRoleArn": "arn:aws:iam::919343063061:role/amplify-dinotestmodule-dev-155240-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::919343063061:role/amplify-dinotestmodule-dev-155240-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dinotestmodule-dev-155240-deployment",
+      "UnauthRoleName": "amplify-dinotestmodule-dev-155240-unauthRole",
+      "StackName": "amplify-dinotestmodule-dev-155240",
+      "StackId": "arn:aws:cloudformation:us-east-1:919343063061:stack/amplify-dinotestmodule-dev-155240/266175f0-4bd6-11ee-a821-0a82465babbb",
+      "AmplifyAppId": "d33l53w37hqn4x"
+    }
+  }
+}
