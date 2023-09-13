@@ -1,7 +1,7 @@
 .header {
     background-color: #6a6c76;
     color: white;
-    height: 10vh !important;
+    height: 15vh !important;
     padding: 21px !important;
 }
 
@@ -26,11 +26,11 @@
     background-color: green; 
 }
 .green-bg{
-    background-color: green;
+    background-color: #1f4f1f;
 }
 
 .red-bg{
-    background-color: red;
+    background-color: #dc2323;
 }
 
 .stop-bg {
@@ -40,4 +40,8 @@ background-color: red;
 .start-bg,
 .stop-bg {
     transition: background-color 0.8s ease; 
+}
+
+.green-border {
+    border: 3px solid rgb(23 157 41);
 }

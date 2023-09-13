@@ -18,7 +18,8 @@
       'restart-bg': clickedButton === 'restart' && cluster.status === 'RESTARTED',
       'not-started-bg': clickedButton === 'not-started' && cluster.status === 'NOT_STARTED',
       'green-bg': cluster.tasks,
-      'red-bg': cluster.status !== 'ACTIVE'
+      'red-bg': cluster.tasks === 0,
+      'green-border': cluster.status === 'ACTIVE'
     }"
   >
     {{ buttonContent }}

@@ -39,7 +39,12 @@
                 'red-card': cluster.status !== 'ACTIVE'
               }"
             >
-              <app-button-list [buttonContent]="cluster.name" [cluster]="cluster"></app-button-list>
+              <app-button-list 
+              [buttonContent]="cluster.name" 
+              [cluster]="cluster" 
+              (startClusterClicked)="handleStartClusterClick(cluster)"
+              (stopClusterClicked)="handleStopClusterClick(cluster)"
+              ></app-button-list>
             </div>
           </div>
         </ng-container>
