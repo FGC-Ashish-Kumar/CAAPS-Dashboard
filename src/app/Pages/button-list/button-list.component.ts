@@ -8,6 +8,7 @@ import * as AWS from 'aws-sdk'; // Import AWS SDK
 })
 export class ButtonListComponent {
   @Input() buttonContent: string;
+  @Input() tasksRunning: number;
   @Input() cluster!: { name: string; status: string, tasks: number, asgName?: string };
   @Output() startClusterClicked: EventEmitter<void> = new EventEmitter<void>();
   @Output() stopClusterClicked: EventEmitter<void> = new EventEmitter<void>();
@@ -21,6 +22,7 @@ export class ButtonListComponent {
 
   constructor() {
     this.buttonContent = '';
+    this.tasksRunning = 0;
 
     // Initialize the AWS Auto Scaling service
     this.asg = new AWS.AutoScaling({
@@ -31,7 +33,6 @@ export class ButtonListComponent {
   ngOnInit() {
     // Initial status check based on ASG desired capacity
     this.checkClusterStatus();
-    console.log("Button: ", this.cluster)
   }
 
   async checkClusterStatus() {

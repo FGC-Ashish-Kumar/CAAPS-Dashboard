@@ -41,6 +41,7 @@
             >
               <app-button-list 
               [buttonContent]="cluster.name" 
+              [tasksRunning]="cluster.tasks"
               [cluster]="cluster" 
               (startClusterClicked)="handleStartClusterClick(cluster)"
               (stopClusterClicked)="handleStopClusterClick(cluster)"

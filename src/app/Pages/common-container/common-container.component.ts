@@ -15,6 +15,7 @@ export class CommonContainerComponent implements OnInit {
   ngOnInit(): void {
     // Fetch and display the list of clusters on component initialization
     this.fetchClusters();
+    console.log("Clusters Data", this.clusters)
   }
 
   async fetchClusters(): Promise<void> {

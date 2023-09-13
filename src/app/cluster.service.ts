@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import * as AWS from "aws-sdk";
 import { environment } from "src/environments/environment";
+import { NgxUiLoaderService } from "ngx-ui-loader";
 
 @Injectable({
   providedIn: "root",
@@ -13,13 +14,20 @@ export class ClusterService {
   private clusterDataCache: { [clusterName: string]: any } = {}; // Add a cache for cluster data
   private cacheUpdateTimeIntervalMs = 60000; // Update the cache every minute (adjust as needed)
 
-  constructor() {
+
+  constructor(private ngxService: NgxUiLoaderService) {
     // Initialize the AWS ECS service with the appropriate region
     AWS.config.update({
       accessKeyId: environment.awsAccessKeyId,
       secretAccessKey: environment.awsSecretAccessKey,
       region: "us-east-1", // Set your desired AWS region
     });
+
+    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
+    // Stop the foreground loading after 5s
+    setTimeout(() => {
+      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
+    }, 7000); 
 
     // Create an ECS instance
     this.ecs = new AWS.ECS();
@@ -34,7 +42,8 @@ export class ClusterService {
       this.loadClusterDataFromLocalStorage();
     }, this.cacheUpdateTimeIntervalMs);
   }
-  
+
+
   async listClustersWithStatus(): Promise<{ name: string; status: string; tasks: number; asgName: string }[]> {
     try {
       // Check if cluster data is already cached
